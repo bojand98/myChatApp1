@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,8 @@
 		3CBD134921C167040009A892 /* myChatAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD134821C167040009A892 /* myChatAppTests.swift */; };
 		3CBD135421C167040009A892 /* myChatAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD135321C167040009A892 /* myChatAppUITests.swift */; };
 		3CBD136221C168130009A892 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3CBD136121C168130009A892 /* GoogleService-Info.plist */; };
+		3CBD136421C17A280009A892 /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD136321C17A280009A892 /* MessageTableViewCell.swift */; };
+		3CBD136821C17BCB0009A892 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBD136721C17BCB0009A892 /* Message.swift */; };
 		4BC298821A014DF92F3DEB81 /* Pods_myChatAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C2916A97F866E4B7A201ED9 /* Pods_myChatAppTests.framework */; };
 		F7C8CDBEA9F4676D52A3F00D /* Pods_myChatAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9918EE5A4138F003751E188B /* Pods_myChatAppUITests.framework */; };
 /* End PBXBuildFile section */
@@ -55,6 +57,8 @@
 		3CBD135321C167040009A892 /* myChatAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myChatAppUITests.swift; sourceTree = "<group>"; };
 		3CBD135521C167040009A892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CBD136121C168130009A892 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3CBD136321C17A280009A892 /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		3CBD136721C17BCB0009A892 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		444E4E15C2A7D27A36BC9390 /* Pods-myChatAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myChatAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-myChatAppTests/Pods-myChatAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		652355EA5BF931E111A3268A /* Pods-myChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-myChatApp/Pods-myChatApp.release.xcconfig"; sourceTree = "<group>"; };
 		6EB62A883FF612788A0B661D /* Pods-myChatAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-myChatAppUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-myChatAppUITests/Pods-myChatAppUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				3CBD133321C167020009A892 /* AppDelegate.swift */,
 				3CBD133521C167020009A892 /* ViewController.swift */,
 				3CBD133721C167020009A892 /* Main.storyboard */,
+				3CBD136321C17A280009A892 /* MessageTableViewCell.swift */,
+				3CBD136721C17BCB0009A892 /* Message.swift */,
 				3CBD133A21C167040009A892 /* Assets.xcassets */,
 				3CBD133C21C167040009A892 /* LaunchScreen.storyboard */,
 				3CBD136121C168130009A892 /* GoogleService-Info.plist */,
@@ -240,19 +246,22 @@
 				TargetAttributes = {
 					3CBD132F21C167020009A892 = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
 					};
 					3CBD134321C167040009A892 = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 3CBD132F21C167020009A892;
 					};
 					3CBD134E21C167040009A892 = {
 						CreatedOnToolsVersion = 10.0;
+						ProvisioningStyle = Automatic;
 						TestTargetID = 3CBD132F21C167020009A892;
 					};
 				};
 			};
 			buildConfigurationList = 3CBD132B21C167020009A892 /* Build configuration list for PBXProject "myChatApp" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -402,7 +411,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CBD133621C167020009A892 /* ViewController.swift in Sources */,
+				3CBD136821C17BCB0009A892 /* Message.swift in Sources */,
 				3CBD133421C167020009A892 /* AppDelegate.swift in Sources */,
+				3CBD136421C17A280009A892 /* MessageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,8 +578,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -580,10 +590,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = myChatApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk.bojan.myChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -598,10 +606,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = myChatApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk.bojan.myChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -617,11 +623,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = myChatAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk.bojan.myChatAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -638,11 +640,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = myChatAppTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk.bojan.myChatAppTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -658,11 +656,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = myChatAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk.bojan.myChatAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -678,11 +672,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = myChatAppUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mk.bojan.myChatAppUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
